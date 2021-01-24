@@ -1,0 +1,49 @@
+{
+    "name": "mz/ctaform",
+    "description": "Plugin for CTA Form",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "ctaform"
+    ],
+    "support": {
+        "docs": "https://github.com/marcozellweger/ctaform/blob/master/README.md",
+        "issues": "https://github.com/marcozellweger/ctaform/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Zellweger",
+            "homepage": "https://marcozellweger.ch"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "mz\\ctaform\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "ctaform",
+        "handle": "ctaform",
+        "developer": "Marco Zellweger",
+        "developerUrl": "https://marcozellweger.ch",
+        "documentationUrl": "https://github.com/marcozellweger/ctaform/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/marcozellweger/ctaform/master/CHANGELOG.md",
+        "components": {
+            "ctaformService": "mz\\ctaform\\services\\CtaformService"
+        },
+        "class": "mz\\ctaform\\Ctaform"
+    }
+}

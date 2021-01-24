@@ -1,0 +1,35 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ctaform plugin for Craft CMS 3.x
+ *
+ * ctaform Settings.twig
+ *
+ * @author    Marco Zellweger
+ * @copyright Copyright (c) 2021 Marco Zellweger
+ * @link      https://marcozellweger.ch
+ * @package   Ctaform
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("mz\\ctaform\\assetbundles\\ctaform\\CtaformAsset") %}
+
+{{ forms.textField({
+    label: 'Emailadresse',
+    instructions: 'Emailadresse an welche das Kontaktformular gesendet werden soll',
+    id: 'ctaEmail',
+    name: 'ctaEmail',
+    value: settings['ctaEmail']
+    })
+}}
+{{ forms.lightswitchField({
+    label: 'Enable Dev Mode',
+    instructions: 'Saves Emails as text file instead of sending it.',
+    id: 'ctaDevMode',
+    name: 'ctaDevMode',
+    on: settings['ctaDevMode']
+    })
+}}

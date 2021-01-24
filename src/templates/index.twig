@@ -1,0 +1,46 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ctaform plugin for Craft CMS 3.x
+ *
+ * ctaform index.twig
+ *
+ * @author    Marco Zellweger
+ * @copyright Copyright (c) 2021 Marco Zellweger
+ * @link      https://marcozellweger.ch
+ * @package   Ctaform
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("mz\\ctaform\\assetbundles\\ctaform\\CtaformAsset") %}
+{% do view.registerAssetBundle("mz\\ctaform\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "https://github.com/marcozellweger/ctaform/blob/master/README.md" %}
+
+{# The title of this CP section #}
+{% set title = "ctaform" %}
+
+{# The URL to this plugin's base CP section #}
+{% set pluginCpUrl = url('ctaform') %}
+
+{# Get a URL to an image in our AssetBundle #}
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@mz/ctaform/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{# Content that should appear in the page header#}
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('ctaform') }}</a>
+    </div>
+{% endset %}
+
+{# The content of the CP Section#}
+{% set content %}
+    <h2>{{ "Index CP Section body goes here"|t('ctaform') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}
