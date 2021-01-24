@@ -2,7 +2,6 @@
     "name": "mz/ctaform",
     "description": "Plugin for CTA Form",
     "type": "craft-plugin",
-    "version": "1.0.0",
     "keywords": [
         "craft",
         "cms",
@@ -42,7 +41,7 @@
         "documentationUrl": "https://github.com/marcozellweger/ctaform/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/marcozellweger/ctaform/master/CHANGELOG.md",
         "components": {
-            "ctaformService": "mz\\ctaform\\services\\CtaformService"
+            "ctaformService": "mz\\ctaform\\services\\MailService"
         },
         "class": "mz\\ctaform\\Ctaform"
     }
