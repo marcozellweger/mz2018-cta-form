@@ -9,5 +9,4 @@ return [
     "City"          => "Ort",
     "Street"        => "Strasse",
     "Contact by"    => "Kontaktieren per",
-
 ];
