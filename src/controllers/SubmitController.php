@@ -90,7 +90,10 @@ class SubmitController extends Controller
         if (!$formdata->validate()) {
             if (Craft::$app->request->acceptsJson) {
                 return $this->asJson(
-                    ['errors' => $formdata->getErrors()]
+                    [
+                        'errors' => $formdata->getErrors(),
+                        'message' => $settings->ctaErrorMessage,
+                    ]
                 );
             }
         }
@@ -100,7 +103,7 @@ class SubmitController extends Controller
         $mailer = new Mailer();
 
         // Grab the to email set in plugin settings
-        $toEmail = Craft::parseEnv($settings->ctaEmail);
+        $toEmail = $settings->ctaEmail;
 
         // Prepare the message
         $textBody = Ctaform::$plugin->mailservice->compileTextBody($formdata);
@@ -124,14 +127,20 @@ class SubmitController extends Controller
         if (!$mailer->send($message)) {
             if (Craft::$app->request->acceptsJson) {
                 return $this->asJson(
-                    ['errors' => $formdata->getErrors()]
+                    [
+                        'errors' => $formdata->getErrors(),
+                        'message' => $settings->ctaErrorMessage,
+                    ]
                 );
             }
         }
 
         if (Craft::$app->request->acceptsJson) {
             return $this->asJson(
-                ['success' => $textBody]
+                [
+                    'success' => true,
+                    'message' => $settings->ctaSuccessMessage,
+                ]
             );
         }
     }
