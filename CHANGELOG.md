@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
-- 4dd7e8ff683daa358c638b1fe6a98ee06beb74cd Translations
+- #4dd7e8ff683daa358c638b1fe6a98ee06beb74cd Translations
 - d1577248357bd42703ebeb8af60d1150f261c15d Settings fields for error and success messages
 ### Updates
 - bfbfbad9830e53f0b72e508be372675d41bd2540 Update validation rules
