@@ -115,7 +115,7 @@ class FormData extends Model
         return [
             [['fromName', 'fromGivenName', 'fromEmail', 'fromPhone', 'fromStreet', 'fromZip', 'fromCity', 'contact'], 'string'],
             [['fromName', 'fromGivenName', 'fromEmail'], 'required'],
-            [['fromEmail'], 'string'],
+            [['fromEmail'], 'email'],
             [['fromStreet', 'fromZip', 'fromCity'], 'required', 'when' => function() {
                 return $this->contact == 'postcard';
             }],

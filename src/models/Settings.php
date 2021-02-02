@@ -42,6 +42,28 @@ class Settings extends Model
     public $ctaEmail;
 
     /**
+     * The success message
+     * 
+     * @var string
+     */
+    public $ctaSuccessMessage;
+
+    /**
+     * The error message
+     * 
+     * @var string
+     */
+    public $ctaErrorMessage;
+
+    /**
+     * The message for for Screenreaders while the form is sending 
+     * 
+     * @var string
+     */
+    public $a11ySendingAnnouncement;
+
+
+    /**
      * @var bool
      */
     public $ctaDevMode;
@@ -63,7 +85,12 @@ class Settings extends Model
     {
         return [
             ['ctaEmail', 'email', 'message' => 'Keine gültige Emailadresse eingegeben'],
+            ['ctaSuccessMessage', 'default', 'value' => Craft::t('ctaform', 'Das Formular wurde erfolgreich versendet.')],
+            ['ctaSuccessMessage', 'string'],
+            ['ctaErrorMessage', 'default', 'value' => Craft::t('ctaform', 'Ein Fehler ist aufgetreten.')],
+            ['ctaErrorMessage', 'string'],
             ['ctaDevMode', 'boolean'],
+            ['a11ySendingAnnouncement', 'default', 'value' => Craft::t('ctaform', 'Das Formular wird versendet.')]
         ];
     }
 }
