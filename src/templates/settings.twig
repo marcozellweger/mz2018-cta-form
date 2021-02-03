@@ -25,30 +25,6 @@
     value: settings['ctaEmail']
     })
 }}
-{{ forms.textField({
-    label: 'Erfolgsmitteilung',
-    instructions: 'Nachricht welche bei erfolgreichem Versenden des Formulars angezeigt werden soll.',
-    id: 'ctaSuccessMessage',
-    name: 'ctaSuccessMessage',
-    value: settings['ctaSuccessMessage']
-    })
-}}
-{{ forms.textField({
-    label: 'Fehlermeldung',
-    instructions: 'Nachricht welche bei einem Fehler angezeigt werden soll.',
-    id: 'ctaErrorMessage',
-    name: 'ctaErrorMessage',
-    value: settings['ctaErrorMessage']
-    })
-}}
-{{ forms.textField({
-    label: 'Screenreader Nachricht',
-    instructions: 'Nachricht welche beim Versenden des Formulars vorgelesen werden soll',
-    id: 'a11ySendingAnnouncement',
-    name: 'a11ySendingAnnouncement',
-    value: settings['a11ySendingAnnouncement']
-    })
-}}
 {{ forms.lightswitchField({
     label: 'Enable Dev Mode',
     instructions: 'Saves Emails as text file instead of sending it.',
