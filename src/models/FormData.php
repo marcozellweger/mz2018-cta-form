@@ -68,6 +68,11 @@ class FormData extends Model
     public $fromCity;
 
     /**
+     * @var string
+     */
+    public $fromMessage;
+
+    /**
      * @var boolean
      */
     public $test;

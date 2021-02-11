@@ -22,8 +22,9 @@
  */
 return [
     'ctaform plugin loaded' => 'ctaform plugin loaded',
-    "Das Formular wird versendet." => 'The form will be sent.',
+    'form_sending' => 'The form will be sent.',
+    'form_sent'     => 'The form has been sent successfuly.',
+    'form_error'    => 'Oops, there is something wrong!',
     'Keine gültige Emailadresse eingegeben' => 'You entered an invalid email address.',
-    'Das Formular wurde erfolgreich versendet.' => 'The form has been sent successfully.',
-    'Ein Fehler ist aufgetreten.' => 'Oops, there is something wrong!'
+    'Nachricht' => 'Message',
 ];

@@ -9,8 +9,9 @@ return [
     "City"          => "Ort",
     "Street"        => "Strasse",
     "Contact by"    => "Kontaktieren per",
-    "Das Formular wird versendet." => 'Das Formular wird versendet',
     'Keine gültige Emailadresse eingegeben' => 'Keine gültige Emailadresse eingegeben',
-    'Das Formular wurde erfolgreich versendet.' => 'Das Formular wurde erfolgreich versendet.',
-    'Ein Fehler ist aufgetreten.' => 'Oops, da ging was schief!'
+    'form_sending'  => 'Das Formular wird versendet.',
+    'form_sent'     => 'Das Formular wurde erfolgreich versendet.',
+    'form_error'    => 'Oops, da ging was schief!',
+    'Nachricht'     => 'Nachricht',
 ];

@@ -108,6 +108,10 @@ class MailService extends Component
             $fields[Craft::t('ctaform', 'Services')] = $formdata->service;
         }
 
+        if ($formdata->fromMessage) {
+            $fields[Craft::t('ctaform', 'Nachricht')] = $formdata->fromMessage;
+        }
+
         $text = '';
 
         foreach ($fields as $key => $value) {

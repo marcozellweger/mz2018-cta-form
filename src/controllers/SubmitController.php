@@ -80,6 +80,7 @@ class SubmitController extends Controller
         $formdata->fromCity = $request->getBodyParam('city');
         $formdata->contact = $request->getBodyParam('contact');
         $formdata->service = $request->getBodyParam('service');
+        $formdata->fromMessage = $request->getBodyParam('message');
 
         // Validate settings
         if (!$settings->validate()) {
@@ -92,7 +93,7 @@ class SubmitController extends Controller
                 return $this->asJson(
                     [
                         'errors' => $formdata->getErrors(),
-                        'message' => $settings->ctaErrorMessage,
+                        'message' => Craft::t('ctaform', 'form_error'),
                     ]
                 );
             }
@@ -129,7 +130,7 @@ class SubmitController extends Controller
                 return $this->asJson(
                     [
                         'errors' => $formdata->getErrors(),
-                        'message' => $settings->ctaErrorMessage,
+                        'message' => Craft::t('ctaform', 'form_error'),
                     ]
                 );
             }
@@ -139,7 +140,7 @@ class SubmitController extends Controller
             return $this->asJson(
                 [
                     'success' => true,
-                    'message' => $settings->ctaSuccessMessage,
+                    'message' => Craft::t('ctaform', 'form_sent'),
                 ]
             );
         }
