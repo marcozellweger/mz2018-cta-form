@@ -27,4 +27,5 @@ return [
     'form_error'    => 'Oops, there is something wrong!',
     'Keine gültige Emailadresse eingegeben' => 'You entered an invalid email address.',
     'Nachricht' => 'Message',
+    'Message' => 'Message',
 ];

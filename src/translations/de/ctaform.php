@@ -14,4 +14,5 @@ return [
     'form_sent'     => 'Das Formular wurde erfolgreich versendet.',
     'form_error'    => 'Oops, da ging was schief!',
     'Nachricht'     => 'Nachricht',
+    'Message'       => 'Mitteilung'
 ];

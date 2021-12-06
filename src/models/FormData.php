@@ -102,6 +102,7 @@ class FormData extends Model
             'fromGivenName' => \Craft::t('ctaform', 'Given Name'),
             'fromEmail'     => \Craft::t('ctaform', 'Email'),
             'fromPhone'      => \Craft::t('ctaform', 'Phone'),
+            'fromMessage' => \Craft::t('ctaform', 'Message'),
         ];
     }
 
