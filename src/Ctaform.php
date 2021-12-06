@@ -75,7 +75,7 @@ class Ctaform extends Plugin
      *
      * @var bool
      */
-    public $hasCpSection = true;
+    public $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
