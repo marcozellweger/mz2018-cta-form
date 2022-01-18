@@ -68,7 +68,7 @@ class SubmitController extends Controller
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
         $plugin = Ctaform::getInstance();
-        $settings = Ctaform::$plugin->getSettings();
+        $settings = $plugin->getSettings();
 
         $formdata = new FormData();
         $formdata->fromName = $request->getBodyParam('lname');
@@ -114,7 +114,7 @@ class SubmitController extends Controller
         $message = (new Message())
             ->setTo($toEmail)
             ->setFrom([$formdata->fromEmail => $formdata->fromName])
-            ->setSubject('test')
+            ->setSubject('Anfrage über Kontaktformular')
             ->setTextBody($textBody)
             ->setHTMLBody($htmlBody);
 
