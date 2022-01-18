@@ -53,7 +53,7 @@ class SubmitController extends Controller
      *         The actions must be in 'kebab-case'
      * @access protected
      */
-    protected $allowAnonymous = ['index', 'test'];
+    protected $allowAnonymous = ['index'];
 
     // Public Methods
     // =========================================================================
