@@ -185,7 +185,7 @@ class Ctaform extends Plugin
         $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
 
         return Craft::$app->view->renderTemplate(
-            'ctaform/settings',
+            'ctaform/_settings',
             [
                 'settings' => $settings,
                 'overrides' => array_keys($overrides),

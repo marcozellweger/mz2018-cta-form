@@ -15,6 +15,16 @@
 
 {% import "_includes/forms" as forms %}
 
+{% macro configWarning(setting) -%}
+  {% set setting = '<code>'~setting~'</code>' %}
+  {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('contact-form', {
+    setting: setting,
+    file: 'ctaform.php'
+  })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
 {% do view.registerAssetBundle("mz\\ctaform\\assetbundles\\ctaform\\CtaformAsset") %}
 
 {{ forms.textField({
@@ -22,7 +32,9 @@
     instructions: 'Emailadresse an welche das Kontaktformular gesendet werden soll',
     id: 'ctaEmail',
     name: 'ctaEmail',
-    value: settings['ctaEmail']
+    value: settings.ctaEmail,
+    disabled: 'ctaEmail' in overrides,
+    warning: 'ctaEmail' in overrides ? configWarning('ctaEmail')
     })
 }}
 {{ forms.lightswitchField({
@@ -30,6 +42,9 @@
     instructions: 'Saves Emails as text file instead of sending it.',
     id: 'ctaDevMode',
     name: 'ctaDevMode',
-    on: settings['ctaDevMode']
+    on: settings.ctaDevMode,
+    disabled: 'ctaDevMode' in overrides,
+    warning: 'ctaDevMode' in overrides ? configWarning('ctaDevMode'),
+
     })
 }}
