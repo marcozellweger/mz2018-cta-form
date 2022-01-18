@@ -18,6 +18,7 @@ use craft\mail\Mailer;
 use craft\mail\Message;
 use yii\web\Response;
 use yii\base\InvalidConfigException;
+use craft\helpers\StringHelper;
 use yii\helpers\Html;
 use yii\helpers\Markdown;
 
@@ -154,9 +155,11 @@ class SubmitController extends Controller
      */
     public function actionTest(): Response
     {
+        $toEmails = Craft::parseEnv(Ctaform::$plugin->getSettings()->ctaEmail);
+        $toEmails = is_string($toEmails) ? StringHelper::split($toEmails) : $toEmails;
         if (Craft::$app->request->acceptsJson) {
             return $this->asJson([
-                'foo' => true,
+                'toEmail' => $toEmails,
             ]);
         }
     }
