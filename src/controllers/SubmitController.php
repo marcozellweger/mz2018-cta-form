@@ -155,11 +155,13 @@ class SubmitController extends Controller
      */
     public function actionTest(): Response
     {
-        $toEmails = Craft::parseEnv(Ctaform::$plugin->getSettings()->ctaEmail);
-        $toEmails = is_string($toEmails) ? StringHelper::split($toEmails) : $toEmails;
+        $toEmails = Ctaform::$plugin->getSettings()->ctaEmail;
+        //$toEmails = is_string($toEmails) ? StringHelper::split($toEmails) : $toEmails;
         if (Craft::$app->request->acceptsJson) {
             return $this->asJson([
                 'toEmail' => $toEmails,
+                'handle' => Ctaform::$plugin->handle,
+                'overrides' => Ctaform::$plugin->getSettings()->ctaEmail,
             ]);
         }
     }
