@@ -68,7 +68,7 @@ class SubmitController extends Controller
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
         $plugin = Ctaform::getInstance();
-        $settings = $plugin->getSettings();
+        $settings = Ctaform::$plugin->getSettings();
 
         $formdata = new FormData();
         $formdata->fromName = $request->getBodyParam('lname');
