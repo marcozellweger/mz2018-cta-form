@@ -107,6 +107,9 @@ class SubmitController extends Controller
         // Grab the to email set in plugin settings
         $toEmail = $settings->ctaEmail;
 
+        // Grab the Subject for Email
+        $subject = $settings->ctaSubject;
+
         // Prepare the message
         $textBody = Ctaform::$plugin->mailservice->compileTextBody($formdata);
         $htmlBody = Ctaform::$plugin->mailservice->compileHtmlBody($textBody);
@@ -115,7 +118,7 @@ class SubmitController extends Controller
         $message = (new Message())
             ->setTo($toEmail)
             ->setFrom([$formdata->fromEmail => $formdata->fromName])
-            ->setSubject('Anfrage über Kontaktformular')
+            ->setSubject($subject)
             ->setTextBody($textBody)
             ->setHTMLBody($htmlBody);
 

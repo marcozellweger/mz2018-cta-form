@@ -37,6 +37,16 @@
     warning: 'ctaEmail' in overrides ? configWarning('ctaEmail')
     })
 }}
+{{ forms.textField({
+    label: 'Subject',
+    instructions: 'Betreffzeile die im Email verwendet werden soll',
+    id: 'ctaSubject',
+    name: 'ctaSubject',
+    value: settings.ctaSubject,
+    disabled: 'ctaSubject' in overrides,
+    warning: 'ctaSubject' in overrides ? configWarning('ctaSubject')
+    })
+}}
 {{ forms.lightswitchField({
     label: 'Enable Dev Mode',
     instructions: 'Saves Emails as text file instead of sending it.',

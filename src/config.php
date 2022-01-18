@@ -20,11 +20,10 @@
  * Once copied to 'craft/config', this file will be multi-environment aware as
  * well, so you can have different settings groups for each environment, just as
  * you do for 'general.php'
+ * 
+ * Available Variables are
+ * 
+ * @var ctaEmail    string
+ * @var ctaSubject  string
+ * @var ctaDevMode  bool
  */
-
-return [
-
-    // This controls blah blah blah
-    "someAttribute" => true,
-
-];

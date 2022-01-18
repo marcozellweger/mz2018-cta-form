@@ -46,6 +46,11 @@ class Settings extends Model
      */
     public $ctaDevMode;
 
+    /**
+     * @var string
+     */
+    public $ctaSubject;
+
     // Public Methods
     // =========================================================================
 
